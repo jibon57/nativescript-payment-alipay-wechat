@@ -33,6 +33,22 @@ export class HomeComponent implements OnInit {
     ngOnInit(): void {
     }
 
+    public startAlipay() {
+        if (this.checkPackage("com.eg.android.AlipayGphone")) {
+            this.payWithAlipay();
+        } else {
+            alert("You don't have Alipay app install.");
+        }
+    }
+
+    public startWeChat() {
+        if (this.checkPackage("com.tencent.mm")) {
+            this.payWithWechat();
+        } else {
+            alert("You don't have Wechat app install.");
+        }
+    }
+
     public checkPackage(pk) {
         let pm = app.android.context.getPackageManager();
         try {
