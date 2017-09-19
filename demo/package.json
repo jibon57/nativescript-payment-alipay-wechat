@@ -1,0 +1,35 @@
+{
+  "description": "nativescript-payment-alipay-wechat",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "readme": "NativeScript Application",
+  "repository": "https://github.com/jibon57/nativescript-payment-alipay-wechat",
+  "nativescript": {
+    "id": "org.nativescript.demo"
+  },
+  "dependencies": {
+    "@angular/animations": "4.2.5",
+    "@angular/common": "4.2.5",
+    "@angular/compiler": "4.2.5",
+    "@angular/core": "4.2.5",
+    "@angular/forms": "4.2.5",
+    "@angular/http": "4.2.5",
+    "@angular/platform-browser": "4.2.5",
+    "@angular/router": "4.2.5",
+    "nativescript-angular": "4.2.0",
+    "nativescript-fancyalert": "^1.1.2",
+    "nativescript-loading-indicator": "^2.3.2",
+    "nativescript-theme-core": "1.0.4",
+    "reflect-metadata": "0.1.10",
+    "rxjs": "5.4.3",
+    "tns-core-modules": "3.2.0",
+    "zone.js": "0.8.17"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.4.5",
+    "babel-types": "6.4.5",
+    "babylon": "6.4.5",
+    "lazy": "1.0.11",
+    "nativescript-dev-typescript": "0.5.0",
+    "typescript": "2.5.2"
+  }
+}
