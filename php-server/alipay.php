@@ -55,13 +55,14 @@ if($_GET['getQuery'] && $_GET['out_trade_no']){
 			curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0');
 			$result = curl_exec($ch);
 				
-			preg_match('/h5_route_token=(.*)\"/', $result, $match);
+			//preg_match('/h5_route_token=(.*)\"/', $result, $match);
+			preg_match('/h5_route_token=(.*)\'/', $result, $match);
 			preg_match('/startApp\?appId=(.*)\&/', $result, $appid);
 			
 			$url = "";
 
 			if($match){
-				$token = rtrim($match[1], '"');
+				$token = rtrim($match[1], "'");
 				$url = "alipays://platformapi/startApp?appId=".trim($appid[1])."&orderSuffix=h5_route_token%3D%22".$token."%22%26is_h5_route%3D%22true%22#Intent;scheme=alipays;package=com.eg.android.AlipayGphone;end";
 			}
 			
