@@ -108,7 +108,7 @@ class WeChatPrepare{
 		curl_setopt($ch,CURLOPT_URL, "https://api.mch.weixin.qq.com/pay/orderquery");
 		curl_setopt($ch,CURLOPT_SSL_VERIFYPEER, true);
 		curl_setopt($ch,CURLOPT_SSL_VERIFYHOST, 1);
-		curl_setopt($ch, CURLOPT_CAINFO, __DIR__ . "/libs/ssl/cacert.pem");
+		curl_setopt($ch, CURLOPT_CAINFO, __DIR__ . "/ssl/cacert.pem");
 		curl_setopt($ch, CURLOPT_POST, TRUE);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $xml);
 		curl_setopt($ch, CURLOPT_HEADER, FALSE);
