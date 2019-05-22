@@ -18,3 +18,5 @@ Alipay: `alipay.php` & `libs/alipay/config.php`
 I have used NativeScript Angular for this example. Files are located in `demo` directory. Open `home.component.ts` & `common.services.ts` to see the example :) 
 
 This example basically for Android. I will be happy if anyone contribute for iOS :)
+
+**If you would like to use Native Library for wechat login/payment you can have a look [nativescript-wechat-login-sample](https://github.com/jibon57/nativescript-wechat-login-sample) example which is for both iOS and Android.**
