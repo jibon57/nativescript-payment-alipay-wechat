@@ -76,14 +76,19 @@ export class HomeComponent implements OnInit {
     }
 
     public openAlipay(url) {
+
         let activity = app.android.foregroundActivity;
         let t = this;
         let i = new android.content.Intent(android.content.Intent.ACTION_VIEW);
         i.setData(android.net.Uri.parse(url));
-        app.android.foregroundActivity.startActivityForResult(i, 99);
-        activity.onActivityResult = function (requestCode, resultCode, data) {
-            let androidAcivity = android.app.Activity;
-            if (requestCode == 99) {
+
+        activity.startActivityForResult(i, 99);
+        app.android.on(app.AndroidApplication.activityResultEvent, onResult);
+
+        function onResult (args) {
+            app.android.off(app.AndroidApplication.activityResultEvent, onResult);
+            //let androidAcivity = android.app.Activity;
+            if (args.requestCode == 99) {
                 setTimeout(function () {
                     dialogs.alert({
                         title: "Info",
@@ -128,15 +133,19 @@ export class HomeComponent implements OnInit {
     }
 
     public openWechat(url) {
+        
         let t = this;
         let activity = app.android.foregroundActivity;
 
         let i = new android.content.Intent(android.content.Intent.ACTION_VIEW);
         i.setData(android.net.Uri.parse(url));
-        app.android.foregroundActivity.startActivityForResult(i, 299);
-        activity.onActivityResult = function (requestCode, resultCode, data) {
-            let androidAcivity = android.app.Activity;
-            if (requestCode == 299) {
+
+        activity.startActivityForResult(i, 299);
+        app.android.on(app.AndroidApplication.activityResultEvent, onResult);
+
+        function onResult (args) {
+            app.android.off(app.AndroidApplication.activityResultEvent, onResult);
+            if (args.requestCode == 299) {
                 setTimeout(function () {
                     t.verifyWechat();
                 }, 100)
